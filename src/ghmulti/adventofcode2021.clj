@@ -15,3 +15,4 @@
   (advent {:day day}))
 
 (load "day01")
+(load "day02")
