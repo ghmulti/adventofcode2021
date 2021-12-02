@@ -2,13 +2,14 @@
   (:require
    [ghmulti.adventofcode2021 :as main]))
 
-
+;; part 1
 (defn- calculate_position [acc [direction val]]
   (case direction
     "forward" (update-in acc [:position] + (Integer/parseInt val))
     "up" (update-in acc [:depth] - (Integer/parseInt val))
     "down" (update-in acc [:depth] + (Integer/parseInt val))))
 
+;; part 2
 (defn- calculate_position_with_aim [acc [direction val]]
   (case direction
     "forward" (-> acc
@@ -21,10 +22,12 @@
   (let [
         lines (clojure.string/split-lines (slurp "resources/day02.txt"))
         ;; _ (println (take 5 lines))
+        ;; part 1
         split_lines (map #(clojure.string/split % #" ") lines)
         ;; _ (println (take 5 split_lines))
         {target_position :position target_depth :depth :as target_pos} (reduce calculate_position {:depth 0 :position 0} split_lines)
         _ (println target_pos)
+        ;; part 2
         {target_position_v2 :position target_depth_v2 :depth :as target_pos_v2} (reduce calculate_position_with_aim {:depth 0 :position 0 :aim 0} split_lines)
         _ (println target_pos_v2)
         ]
