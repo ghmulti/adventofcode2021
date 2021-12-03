@@ -1,4 +1,4 @@
-(ns ghmulti.day02
+(ns ghmulti.day03
   (:require
    [ghmulti.adventofcode2021 :as main]))
 
