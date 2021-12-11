@@ -17,3 +17,4 @@
 (load "day01")
 (load "day02")
 (load "day03")
+(load "day04")
